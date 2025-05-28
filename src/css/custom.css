@@ -1,0 +1,183 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+	width: 100% !important;
+
+	--ifm-color-primary: #6ea033;
+	--ifm-color-primary-dark: #29784c;
+	--ifm-color-primary-darker: #277148;
+	--ifm-color-primary-darkest: #205d3b;
+	--ifm-color-primary-light: #a0cf68;
+	--ifm-color-primary-lighter: #359962;
+	--ifm-color-primary-lightest: #3cad6e;
+	--ifm-code-font-size: 95%;
+	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+	--ifm-navbar-height: 5rem;
+
+	/**
+   * Tamaki MES Perspective Colors
+   */
+	--primary-color: 49.12% 0.3096 275.75;
+	--primary-content-color: 89.824% 0.06192 275.75;
+	--secondary-color: 69.71% 0.329 342.55;
+	--secondary-content-color: 98.71% 0.0106 342.55;
+	--accent-color: 76.76% 0.184 183.61;
+	--accent-content-color: 47.65% 0.113 183.61;
+	--info-color: 72.06% 0.191 231.6;
+	--info-secondary-color: 82.25% 0.1175 231.6;
+	--info-content-color: 44.12% 0.1175 231.6;
+	--success-color: 64.8% 0.15 160;
+	--success-content-color: 48.24% 0.15 160;
+	--warning-color: 84.71% 0.199 83.87;
+	--warning-secondary-color: 89.7% 0.1317 83.87;
+	--warning-content-color: 55.89% 0.1317 83.87;
+	--error-color: 71.76% 0.221 22.18;
+	--error-content-color: 48.83% 0.221 22.18;
+
+	--neutral-10-color: 96.68% 0.006 264.53;
+	--neutral-20-color: 90.81% 0.008 253.86;
+	--neutral-30-color: 82.68% 0.011 247.96;
+	--neutral-40-color: 73.14% 0.013 248;
+	--neutral-50-color: 64.14% 0.015 258.36;
+	--neutral-60-color: 54.16% 0.014 248.08;
+	--neutral-70-color: 43.87% 0.011 243.05;
+	--neutral-80-color: 34.47% 0.012 243.17;
+	--neutral-90-color: 26.8% 0.01 229.31;
+	--neutral-100-color: 19.73% 0.009 240.37;
+
+	--white-color: 100% 0 0;
+	--black-color: 0% 0 0;
+
+	/* Full oklch color vars */
+	--primary: oklch(var(--primary-color));
+	--primary-content: oklch(var(--primary-content-color));
+	--secondary: oklch(var(--secondary-color));
+	--secondary-content: oklch(var(--secondary-content-color));
+	--accent: oklch(var(--accent-color));
+	--accent-content: oklch(var(--accent-content-color));
+
+	--neutral-10: oklch(var(--neutral-10-color));
+	--neutral-20: oklch(var(--neutral-20-color));
+	--neutral-30: oklch(var(--neutral-30-color));
+	--neutral-40: oklch(var(--neutral-40-color));
+	--neutral-50: oklch(var(--neutral-50-color));
+	--neutral-60: oklch(var(--neutral-60-color));
+	--neutral-70: oklch(var(--neutral-70-color));
+	--neutral-80: oklch(var(--neutral-80-color));
+	--neutral-90: oklch(var(--neutral-90-color));
+	--neutral-100: oklch(var(--neutral-100-color));
+
+	--info: oklch(var(--info-color));
+	--infoSecondary: oklch(var(--infoSecondary-color));
+	--info-content: oklch(var(--info-content-color));
+	--success: oklch(var(--success-color));
+	--success-content: oklch(var(--success-content-color));
+	--warning: oklch(var(--warning-color));
+	--warningSecondary: oklch(var(--warningSecondary-color));
+	--warning-content: oklch(var(--warning-content-color));
+	--error: oklch(var(--error-color));
+	--error-content: oklch(var(--error-content-color));
+
+	--white: oklch(var(--white-color));
+	--black: oklch(var(--black-color));
+
+	/* DARK MODE colors */
+	--primary-color-dark: 49.12% 0.3096 275.75;
+	--primary-content-color-dark: 89.824% 0.06192 275.75;
+	--secondary-color-dark: 69.71% 0.329 342.55;
+	--secondary-content-color-dark: 98.71% 0.0106 342.55;
+	--accent-color-dark: 76.76% 0.184 183.61;
+	--accent-content-color-dark: 15.352% 0.0368 183.61;
+	--info-color-dark: 72.06% 0.191 231.6;
+	--info-secondary-color-dark: 82.25% 0.1175 231.6;
+	--info-content-color-dark: 0% 0 0;
+	--success-color-dark: 64.8% 0.15 160;
+	--success-content-color-dark: 0% 0 0;
+	--warning-color-dark: 84.71% 0.199 83.87;
+	--warning-secondary-color-dark: 89.7% 0.1317 83.87;
+	--warning-content-color-dark: 0% 0 0;
+	--error-color-dark: 71.76% 0.221 22.18;
+	--error-content-color-dark: 0% 0 0;
+
+	--neutral-100-color-dark: 96.68% 0.006 264.53;
+	--neutral-90-color-dark: 90.81% 0.008 253.86;
+	--neutral-80-color-dark: 82.68% 0.011 247.96;
+	--neutral-70-color-dark: 73.14% 0.013 248;
+	--neutral-60-color-dark: 64.14% 0.015 258.36;
+	--neutral-50-color-dark: 54.16% 0.014 248.08;
+	--neutral-40-color-dark: 43.87% 0.011 243.05;
+	--neutral-30-color-dark: 34.47% 0.012 243.17;
+	--neutral-20-color-dark: 26.8% 0.01 229.31;
+	--neutral-10-color-dark: 19.73% 0.009 240.37;
+
+	--white-color-dark: 0% 0 0;
+	--black-color-dark: 100% 0 0;
+
+	/* Full oklch color vars DARK MODE */
+	--primary-dark: oklch(var(--primary-color-dark));
+	--primary-content-dark: oklch(var(--primary-content-color-dark));
+	--secondary-dark: oklch(var(--secondary-color-dark));
+	--secondary-content-dark: oklch(var(--secondary-content-color-dark));
+	--accent-dark: oklch(var(--accent-color-dark));
+	--accent-content-dark: oklch(var(--accent-content-color-dark));
+
+	--neutral-10-dark: oklch(var(--neutral-10-color-dark));
+	--neutral-20-dark: oklch(var(--neutral-20-color-dark));
+	--neutral-30-dark: oklch(var(--neutral-30-color-dark));
+	--neutral-40-dark: oklch(var(--neutral-40-color-dark));
+	--neutral-50-dark: oklch(var(--neutral-50-color-dark));
+	--neutral-60-dark: oklch(var(--neutral-60-color-dark));
+	--neutral-70-dark: oklch(var(--neutral-70-color-dark));
+	--neutral-80-dark: oklch(var(--neutral-80-color-dark));
+	--neutral-90-dark: oklch(var(--neutral-90-color-dark));
+	--neutral-100-dark: oklch(var(--neutral-100-color-dark));
+
+	--info-dark: oklch(var(--info-color-dark));
+	--infoSecondary-dark: oklch(var(--infoSecondary-color-dark));
+	--info-content-dark: oklch(var(--info-content-color-dark));
+	--success-dark: oklch(var(--success-color-dark));
+	--success-content-dark: oklch(var(--success-content-color-dark));
+	--warning-dark: oklch(var(--warning-color-dark));
+	--warningSecondary-dark: oklch(var(--warningSecondary-color-dark));
+	--warning-content-dark: oklch(var(--warning-content-color-dark));
+	--error-dark: oklch(var(--error-color-dark));
+	--error-content-dark: oklch(var(--error-content-color-dark));
+
+	--white-dark: oklch(var(--white-color-dark));
+	--black-dark: oklch(var(--black-color-dark));
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+	--ifm-color-primary: #6ea033;
+	--ifm-color-primary-dark: #21af90;
+	--ifm-color-primary-darker: #1fa588;
+	--ifm-color-primary-darkest: #1a8870;
+	--ifm-color-primary-light: #a0cf68;
+	--ifm-color-primary-lighter: #32d8b4;
+	--ifm-color-primary-lightest: #4fddbf;
+	--docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.navbar__logo {
+	display: flex;
+	align-items: center;
+}
+
+td:has(img) {
+	text-align: center;
+}
+
+.navbar__logo img {
+	height: 65px;
+}
+
+.theme-doc-sidebar-container div div a img {
+	height: 65px;
+}
