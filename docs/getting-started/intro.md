@@ -27,11 +27,10 @@ Designed with Ignition’s ecosystem in mind, the module ensures a smooth integr
 - **Data Filtering**: Ability to filter data dynamically, showing only relevant information at any given time.
 - **Data Tooltip**: Provides detailed information about data points when hovering over them.
 - **DataZoom**: Allows users to zoom in on specific ranges of data, making it easier to analyze trends within smaller subsets.
-
-### Coming Soon
-
 - **Export Functionality**: Charts can be exported as images (PNG, JPEG) or SVG files, which can then be used in other documents or presentations.
  
 # Other Resources
 
 [Ignition User Manual](https://docs.inductiveautomation.com/)
+
+[eCharts Documentation](https://echarts.apache.org)
