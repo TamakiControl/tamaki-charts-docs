@@ -1,0 +1,42 @@
+name: Build
+
+on:
+  pull_request:
+    branches:
+      - main  # Build when a pull request is opened or updated. Adjust if needed.
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
+      URL: ${{ secrets.URL }}
+      BASE_URL: ${{ secrets.BASE_URL }}
+      GH_DOCS_URL: ${{ secrets.GH_DOCS_URL }}
+      GH_CODE_URL: ${{ secrets.GH_CODE_URL }}
+      STACK_OVERFLOW_URL: ${{ secrets.STACK_OVERFLOW_URL }}
+      TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}
+      TYPESENSE_HOST: ${{ secrets.TYPESENSE_HOST }}
+      TYPESENSE_PORT: ${{ secrets.TYPESENSE_PORT }}
+      TYPESENSE_PROTOCOL: ${{ secrets.TYPESENSE_PROTOCOL }}
+      TYPESENSE_COLLECTION_NAME: ${{ secrets.TYPESENSE_COLLECTION_NAME }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'  # Use a Node.js version compatible with Docusaurus
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Build Docusaurus
+        run: |
+          npm run build
+

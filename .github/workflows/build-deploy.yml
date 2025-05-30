@@ -1,0 +1,94 @@
+name: Deploy Docusaurus to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Deploy when changes are pushed to the main branch. Adjust if needed.
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
+      URL: ${{ secrets.URL }}
+      BASE_URL: ${{ secrets.BASE_URL }}
+      GH_DOCS_URL: ${{ secrets.GH_DOCS_URL }}
+      GH_CODE_URL: ${{ secrets.GH_CODE_URL }}
+      STACK_OVERFLOW_URL: ${{ secrets.STACK_OVERFLOW_URL }}
+      TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}
+      TYPESENSE_HOST: ${{ secrets.TYPESENSE_HOST }}
+      TYPESENSE_PORT: ${{ secrets.TYPESENSE_PORT }}
+      TYPESENSE_PROTOCOL: ${{ secrets.TYPESENSE_PROTOCOL }}
+      TYPESENSE_COLLECTION_NAME: ${{ secrets.TYPESENSE_COLLECTION_NAME }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22'  # Use a Node.js version compatible with Docusaurus
+
+      - name: Install dependencies
+        run: |
+          npm install
+
+      - name: Build Docusaurus
+        run: |
+          npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build  # Path to the built files
+          keep_files: true  # Keeps existing files in the gh-pages branch
+
+  run-scraper:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+
+    env:
+      TYPESENSE_API_KEY: ${{ secrets.TYPESENSE_API_KEY }}
+      TYPESENSE_HOST: ${{ secrets.TYPESENSE_HOST }}
+      TYPESENSE_PORT: ${{ secrets.TYPESENSE_PORT }}
+      TYPESENSE_PROTOCOL: ${{ secrets.TYPESENSE_PROTOCOL }}
+      TYPESENSE_COLLECTION_NAME: ${{ secrets.TYPESENSE_COLLECTION_NAME }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Create .env file
+        run: |
+          echo "TYPESENSE_API_KEY=${{ secrets.TYPESENSE_API_KEY }}" > .env
+          echo "TYPESENSE_HOST=${{ secrets.TYPESENSE_HOST }}" >> .env
+          echo "TYPESENSE_PORT=${{ secrets.TYPESENSE_PORT }}" >> .env
+          echo "TYPESENSE_PROTOCOL=${{ secrets.TYPESENSE_PROTOCOL }}" >> .env
+          echo "TYPESENSE_COLLECTION_NAME=${{ secrets.TYPESENSE_COLLECTION_NAME }}" >> .env
+
+      - name: Prepare config string
+        id: prep
+        run: |
+          if [ -f typesense-config.json ]; then
+            CONFIG=$(jq -c . typesense-config.json)
+            if [ -z "$CONFIG" ]; then
+              echo "typesense-config.json is empty or improperly formatted."
+              exit 1
+            fi
+            echo "CONFIG=$CONFIG" >> $GITHUB_ENV
+          else
+            echo "typesense-config.json file not found."
+            exit 1
+          fi
+
+      - name: Run docsearch-scraper
+        run: |
+          docker run -i --env-file .env \
+            -e CONFIG="${{ env.CONFIG }}" \
+            typesense/docsearch-scraper:0.11.0

@@ -20,9 +20,7 @@ These options are available on all of our Tamaki Charts.
 
 **Default**: `false`
 
-**Description**: 
-
-**Use Cases**:
+**Description**: Please see the [eChart Documentation](https://echarts.apache.org/en/api.html#echartsInstance.setOption) on this topic for more information on this prop.
 
 ### notMerge
 
@@ -30,9 +28,7 @@ These options are available on all of our Tamaki Charts.
 
 **Default**: `false`
 
-**Description**: 
-
-**Use Cases**:
+**Description**:  Please see the [eChart Documentation](https://echarts.apache.org/en/api.html#echartsInstance.setOption) on this topic for more information on this prop.
 
 ## loading
 
