@@ -1,0 +1,23 @@
+{
+  "index_name": "tamaki-charts-docs",
+  "start_urls": ["https://tamakicontrol.github.io/tamaki-charts-docs/"],
+  "sitemap_urls": ["https://tamakicontrol.github.io/tamaki-charts-docs/sitemap.xml"],
+  "allowed_domains": ["tamakicontrol.github.io"],
+  "js_render": false,
+  "sitemap_alternate_links": true,
+  "strip_chars": " .,;:#",
+  "selectors": {
+    "default": {
+      "lvl0": {
+        "selector": ".navbar__title",
+        "global": true,
+        "default_value": "Documentation"
+      },
+      "lvl1": "article h1, .markdown h1",
+      "lvl2": "article h2, .markdown h2",
+      "lvl3": "article h3, .markdown h3",
+      "lvl4": "article h4, .markdown h4",
+      "text": "article p, article li, .markdown p, .markdown li"
+    }
+  }
+}
