@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktamaki_charts_docs=self.webpackChunktamaki_charts_docs||[]).push([[903],{1912:a=>{a.exports=JSON.parse('{"blogBasePath":"/tamaki-charts-docs/blog","blogTitle":"Blog","authorsListPath":"/tamaki-charts-docs/blog/authors"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktamaki_charts_docs=self.webpackChunktamaki_charts_docs||[]).push([[888],{3264:a=>{a.exports=JSON.parse('{"metadata":{"permalink":"/tamaki-charts-docs/blog","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
