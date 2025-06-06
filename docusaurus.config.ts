@@ -100,6 +100,12 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'issueSidebar',
+          position: 'left',
+          label: 'Issues'
+        }
       ],
       hideOnScroll: true,
     },

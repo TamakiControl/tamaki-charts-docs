@@ -46,9 +46,11 @@ function HomepageHeader() {
 				</div>
 				<div className={styles.buttons}>
 					<Link
-					    className="button button--secondary button--lg secondaryButton"
+					    className="button button--primary button--lg mainButton"
+						style={{marginTop: 1 + 'rem'}}
 						to='/issues/intro'
 					>
+						Report an Issue
 					</Link>
 				</div>
 			</div>
