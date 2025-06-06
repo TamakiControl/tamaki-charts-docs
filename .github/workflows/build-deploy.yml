@@ -27,17 +27,18 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '22'  # Use a Node.js version compatible with Docusaurus
+          cache: 'yarn'
 
       - name: Install dependencies
         run: |
-          npm install
+          yarn install
 
       - name: Build Docusaurus
         run: |
-          npm run build
+          yarn run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
