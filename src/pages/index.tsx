@@ -48,7 +48,7 @@ function HomepageHeader() {
 					<Link
 					    className="button button--primary button--lg mainButton"
 						style={{marginTop: 1 + 'rem'}}
-						to='/issues/intro'
+						to='/Issues/intro'
 					>
 						Report an Issue
 					</Link>
