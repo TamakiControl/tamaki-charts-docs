@@ -130,6 +130,15 @@ const config: Config = {
             },
           ],
         },
+        {
+          title: 'Issues',
+          items: [
+            {
+              label: 'Report an Issue',
+              to: '/docs/issues/intro'
+            },
+          ],
+        },
       ],
 			copyright: `Copyright © ${new Date().getFullYear()} Tamaki Control`,
     },
