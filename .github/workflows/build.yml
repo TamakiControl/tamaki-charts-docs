@@ -31,12 +31,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '22'  # Use a Node.js version compatible with Docusaurus
+          cache: 'yarn'
 
       - name: Install dependencies
         run: |
-          npm install
+          yarn install
 
       - name: Build Docusaurus
         run: |
-          npm run build
+          yarn run build
 
