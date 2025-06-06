@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 
-const UtterancesComments = () => {
+const UtteranceComments = () => {
   const commentBox = useRef(null);
 
   useEffect(() => {
     const scriptEl = document.createElement('script');
     scriptEl.src = 'https://utteranc.es/client.js';
-    scriptEl['repo'] = 'TamakiControl/tamaki-charts-docs';
-    scriptEl['issue-term'] = 'title';
-    scriptEl['theme'] = 'preferred-color-scheme';
+    scriptEl.setAttribute('repo', 'TamakiControl/tamaki-charts-docs');
+    scriptEl.setAttribute('issue-term', 'title');
+    scriptEl.setAttribute('theme', 'preferred-color-scheme');
     scriptEl.crossOrigin = 'anonymous';
     scriptEl.async = true;
     if (commentBox.current) {
@@ -21,4 +21,4 @@ const UtterancesComments = () => {
   return <div ref={commentBox} />;
 };
 
-export default UtterancesComments;
+export default UtteranceComments;
