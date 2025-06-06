@@ -3,7 +3,7 @@ name: Deploy Docusaurus to GitHub Pages
 on:
   push:
     branches:
-      - main  # Deploy when changes are pushed to the main branch. Adjust if needed.
+      - poc/utterances  # Deploy when changes are pushed to the main branch. Adjust if needed.
 
 jobs:
   build-and-deploy:
