@@ -7,7 +7,7 @@ const UtteranceComments = () => {
     const scriptEl = document.createElement('script');
     scriptEl.src = 'https://utteranc.es/client.js';
     scriptEl.setAttribute('repo', 'TamakiControl/tamaki-charts-docs');
-    scriptEl.setAttribute('issue-term', 'title');
+    scriptEl.setAttribute('issue-term', 'pathname');
     scriptEl.setAttribute('theme', 'preferred-color-scheme');
     scriptEl.crossOrigin = 'anonymous';
     scriptEl.async = true;
