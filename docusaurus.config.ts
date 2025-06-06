@@ -100,6 +100,12 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
+        {
+          type: 'docSidebar',
+          sidebarId: 'issueSidebar',
+          position: 'left',
+          label: 'Issues'
+        }
       ],
       hideOnScroll: true,
     },
@@ -121,6 +127,15 @@ const config: Config = {
             {
               label: 'Stack Overflow',
               href: process.env.STACK_OVERFLOW_URL,
+            },
+          ],
+        },
+        {
+          title: 'Issues',
+          items: [
+            {
+              label: 'Report an Issue',
+              to: '/docs/issues/intro'
             },
           ],
         },

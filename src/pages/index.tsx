@@ -44,6 +44,15 @@ function HomepageHeader() {
 						Read the docs!
 					</Link>
 				</div>
+				<div className={styles.buttons}>
+					<Link
+					    className="button button--primary button--lg mainButton"
+						style={{marginTop: 1 + 'rem'}}
+						to='/docs/issues/intro'
+					>
+						Report an Issue
+					</Link>
+				</div>
 			</div>
 		</header>
   );
