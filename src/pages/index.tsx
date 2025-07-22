@@ -31,7 +31,7 @@ function HomepageHeader() {
 					backdropFilter: 'saturate(130%)',
 				}}
 			></div>
-			<div className='container'>
+			<div className='container' style={{zIndex:1}}>
 				<Heading as='h1' className='hero__title'>
 					<img src='img/tamaki-charts-logo.png' alt='Tamaki Charts Logo' />
 				</Heading>
